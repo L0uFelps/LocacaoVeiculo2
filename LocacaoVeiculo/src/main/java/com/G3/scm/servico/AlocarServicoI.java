@@ -45,7 +45,7 @@ public class AlocarServicoI implements AlocarServico {
 			alocacao.setDtEntrega(alocacao.getDtEntregaFormat());
 			int verifDataEntrega =  alocacao.getDtEntrega().getDayOfYear(); 
 			int verifDataInicio = alocacao.getDtInicio().getDayOfYear();
-			if(cliente.isAlocacao() == false && veiculo.isLocado() == false && verifDataEntrega >= verifDataInicio) {
+			if(cliente.isAlocacao() == false || veiculo.isLocado() == false && verifDataEntrega >= verifDataInicio) {
 				alocacao.setClienteId(cliente.getId());
 				alocacao.setClienteNome(cliente.getNome());
 				alocacao.setVeiculoId(veiculo.getId());
