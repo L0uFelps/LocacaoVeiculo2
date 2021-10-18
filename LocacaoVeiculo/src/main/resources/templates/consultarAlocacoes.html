@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"> 
+
+<head>
+	<link rel="stylesheet" th:href="@{/css/consulClienteStyle.css}" />
+	<link rel="stylesheet" th:href="@{/css/allStyle.css}" />
+</head>
+
+<body>
+	<div class="Menu">
+		<a th:href="@{/}" id="botaoVoltar"><button><img th:src="@{/images/setaVoltar.png}" /></button></a>
+		<h1>Consultar Alocações</h1>
+		<div class="bodyTable" th:switch="${alocados}">
+			<h5 th:case="null">Não existem clientes cadastrados ainda!</h5>
+			<div th:case="*">
+				<table class="table">
+					<thead>
+						<tr>
+							<th>ID</th>
+							<th>ID Cliente</th>
+							<th>CPF Cliente</th>
+							<th>Nome Cliente</th>
+							<th>ID Veiculo</th>
+							<th>Placa Veiculo</th>
+							<th>Fabricante Veiculo</th>
+							<th>Data Reserva</th>
+							<th>Data Entrega</th>
+							<th>Valor total</th>
+							<th>Situação</th>
+							
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="alocar : ${alocados}">
+							<td th:text="${alocar.id}"></td>
+							<td th:text="${alocar.clienteId}"></td>
+							<td th:text="${alocar.clienteCpf}"></td>
+							<td th:text="${alocar.clienteNome}"></td>
+							<td th:text="${alocar.veiculoId}"></td>
+							<td th:text="${alocar.veiculoPlaca}"></td>
+							<td th:text="${alocar.veiculoNome}"></td>
+							<td th:text="${alocar.dtInicioFormat}"></td>
+							<td th:text="${alocar.dtEntregaFormat}"></td>
+							<td th:text="${alocar.valorTotal}"></td>
+							<td th:text="${alocar.situacao}"></td>
+							<td>
+								<div class="btn-group pull-right">
+									<a class="btnDesalocar"
+										th:href="@{/sig/alocados/{id}(id=${alocar.id})}">Desalocar</a>
+									
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<h6 th:text="${message}" class="text-danger"></h6>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

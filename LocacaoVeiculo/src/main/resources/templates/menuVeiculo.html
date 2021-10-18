@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel= "stylesheet" th:href="@{/css/clienteStyle.css}" />
+		<link rel= "stylesheet" th:href="@{/css/allStyle.css}" />
+	</head>
+	<body>
+		<div class = "Menu">
+			<a th:href="@{/}" id="botaoVoltar"><button><img th:src="@{/images/setaVoltar.png}" /></button></a>
+			<h1>Menu veiculo</h1>
+			<div class = "Opcoes">
+				<ul id="subMenu">
+					
+						<li><a th:href="@{/sig/veiculo}"><button><div><img th:src="@{/images/iconeMais.png}" /></div>Incluir veiculo</button></a></li>
+						<li><a th:href="@{/sig/veiculos}"><button><div><img th:src="@{/images/iconeConsulta.png}" /></div>Consultar veiculo</button></a></li>
+					
+				</ul>
+			</div>
+		</div>
+	</body>
+</html>

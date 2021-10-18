@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<link rel="stylesheet" th:href="@{/css/cadasClienteStyle.css}" />
+	<link rel="stylesheet" th:href="@{/css/allStyle.css}" />
+	<script type="text/javascript"> function consulta() {window.open("/sig/veiculos");} </script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+	<div class="Menu">
+		<a th:href="@{/sig/menuVeiculo}" id="botaoVoltar"><button><img th:src="@{/images/setaVoltar.png}" /></button></a>
+		<h1>Cadastrar Veiculo</h1>
+		<div id="formulario">
+			<form action="#" th:action="@{/sig/veiculos}" th:object="${veiculo}" method="post">
+				<label for="nomeVeiculo">Fabricante: </label>
+				<input type="text" th:field="*{nome}" id="nomeVeiculo" name="nomeVeiculo" placeholder="Fabricante do Veiculo">
+				<span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}" class="textdanger"> </span>
+				
+				<label for="anoVeiculo">Ano: </label>
+				<input type="text" th:field="*{ano}" id="anoVeiculo" name="anoVeiculo" placeholder="Ano do Veiculo">
+				<span th:if="${#fields.hasErrors('ano')}" th:errors="*{ano}" class="textdanger"> </span> <br><br>
+					
+					<label for="modeloVeiculo">Modelo: </label>
+					<input type="text" th:field="*{modelo}" id="modeloVeiculo" name="modeloVeiculo" placeholder="Modelo">
+					<span th:if="${#fields.hasErrors('modelo')}" th:errors="*{modelo}" class="textdanger"> </span>
+					
+					<label for="placaVeiculo">Placa: </label>
+					<input type="text" th:field="*{placa}" id="placaVeiculo" name="placaVeiculo" placeholder="Placa">
+					<span th:if="${#fields.hasErrors('placa')}" th:errors="*{placa}" class="textdanger"></span><br><br>
+					
+					<label for="valorDiaria">Valor da diaria: </label>
+					<input type="number" th:field="*{valorDiaria}" id="valorDiaria" name="valorDiaria" placeholder="Valor da Diaria">
+					
+					
+					<label for="veiculoCor">Cor: </label>
+					<input type="text" th:field="*{cor}" id="veiculoCor" name="veiculoCor" placeholder="Cor do Veiculo"><br><br>
+					<span th:if="${#fields.hasErrors('cor')}" th:errors="*{cor}" class="textdanger"></span>
+					
+					<div id="botaoConfirma">
+						<input type="submit"  value="Confirmar cadastro"id="confirmarCadastro" name="confirmarCadastro">
+						<input type="button" value="Consultar veiculos"id="consultar" name="consultar" onclick="consulta();">
+					</div>
+				</form>
+				<h6 th:text="${message}" class="text-danger"></h6>
+		</div>
+		</div>
+	</body>
+</html>

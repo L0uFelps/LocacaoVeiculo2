@@ -1,0 +1,187 @@
+body {
+  background-color: rgb(255, 255, 255);
+   background-image: url("https://i.pinimg.com/originals/c8/b9/d3/c8b9d3be685f426218df3d94a9086e96.jpg");  
+}
+.Menu{
+	background-color: #C1BDBE;
+	width: 100%;
+	margin: auto;
+	position: center;
+	margin-top: 15%;
+	padding-bottom: 2%;
+	border: 1px solid black;
+	
+	
+}
+
+.Menu #botaoVoltar button{
+	width: 50px;
+	height: 50px;
+	background-color: #C1BDBE;
+	border: none;
+	position: static;
+	
+}
+
+.Menu #botaoVoltar button img{
+	width: 50px;
+	height: 50px;
+	
+}
+
+.Menu h1{
+	text-align: center;
+	color: rgb(0, 0, 0);
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bolder;
+	
+}
+
+.Menu .Opcoes{
+	position: center;
+	width:auto;
+	text-align: center;
+	
+	
+	
+}
+.Menu .Opcoes #subMenu {
+	
+	list-style-type: none;
+	overflow: hidden;
+	margin: auto;
+	margin-left: 35%;
+	padding: 0;
+	width: 35%;
+	text-align: center;
+}
+.Menu .Opcoes ul{
+	list-style-type: none;
+	overflow: hidden;
+	margin: auto;
+	margin-left: 25%;
+	padding: 0;
+	width: 55%;
+	text-align: center;
+	
+}
+
+
+.Menu .Opcoes ul li {
+	float: left;
+	margin-left: 3.5%;
+	padding-right: 3px;
+	
+	
+}
+.Menu .Opcoes ul li a button{
+	background-color: #A9A4A4;
+	width:auto;
+	font-size: 20px;
+	font-weight: bold;
+	
+}
+.Menu .Opcoes ul li a button div{
+	float:left;
+}
+.Menu .Opcoes ul li a button div img{
+	width:20px;
+	height:20px;
+}
+
+.Menu #formulario{
+	margin:auto;
+	width: 50%;
+	text-align: left;
+	border: 1px solid black;
+	padding-bottom: 2%;
+	
+}
+
+.Menu #formulario form label{
+	font-size: 18px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-style: italic;
+	font-weight: 500;
+}
+
+.Menu #formulario form #botaoConfirma{
+	text-align: center;
+}
+.Menu #formulario form #confirmarCadastro{
+	font-size: 20px;
+	font-weight: bold;
+	background-color: #A9A4A4;
+	border-radius: 5px;
+}
+
+.Menu #formulario form #consultar{
+	font-size: 20px;
+	font-weight: bold;
+	background-color: #A9A4A4;
+	border-radius: 5px;
+}
+.bodyTable{
+	position: center;
+	font-family: Arial, Helvetica, sans-serif;
+	
+	
+}
+.table {
+	width: 100%;
+}
+
+.table tr th {
+	text-align: center;
+	padding-right: 0px;
+	margin-right: 0px;
+	background-color: #A9A4A4;
+	border-radius: 5px;
+	font-weight: bold;
+	
+	
+}
+
+.table tr td {
+	text-align: center;
+	padding-top: 10px;	
+}
+
+.btnDesalocar{
+	text-decoration: none;
+	background-color: rgb(255, 0, 0);
+	color:white;
+	font-weight: bold;
+	padding: 5%;
+	border-radius: 5px;
+}
+
+.btnAlterar{
+	text-decoration: none;
+	background-color: rgb(0, 64, 0);
+	color:white;
+	font-weight: bold;
+	
+	padding: 2px;
+	border-radius: 5px;
+}
+
+.btnDeletar{
+	text-decoration: none;
+	background-color: rgb(255, 0, 0);
+	color:white;
+	font-weight: bold;
+	padding: 2px;
+	border-radius: 5px;
+}
+
+.text-danger{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 20px;
+	color:red;
+	text-align: center;
+}
+
+
+
+

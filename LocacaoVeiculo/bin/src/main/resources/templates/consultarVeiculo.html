@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel= "stylesheet" th:href="@{/css/consulVeiculoStyle.css}" />
+		<link rel= "stylesheet" th:href="@{/css/allStyle.css}" />
+	</head>
+	<body>
+		<div class = "Menu">
+			<a th:href="@{/sig/menuVeiculo}" id="botaoVoltar"><button><img th:src="@{/images/setaVoltar.png}" /></button></a>
+			<h1>Consultar Veiculo</h1>
+			<div class="bodyTable" th:switch="${veiculos}">
+			<h5 th:case="null">Não existem veiculos cadastrados ainda!</h5>
+			<div th:case="*">
+				<table class="table">
+					<thead>
+						<tr>
+							<th>ID</th>
+							<th>Placa</th>
+							<th>Fabricante</th>
+							<th>Modelo</th>
+							<th>Ano</th>
+							<th>Cor</th>
+							<th>Valor Diaria</th>
+							<th>Locado</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="veiculo : ${veiculos}">
+							<td th:text="${veiculo.id}"></td>
+							<td th:text="${veiculo.placa}"></td>
+							<td th:text="${veiculo.nome}"></td>
+							<td th:text="${veiculo.modelo}"></td>
+							<td th:text="${veiculo.ano}"></td>
+							<td th:text="${veiculo.cor}"></td>
+							<td th:text="${veiculo.valorDiaria}"></td>
+							<td th:text="${veiculo.locado}"></td>
+							<td>
+								<div class="btn-group pull-right">
+									<a class="btnAlterar"
+										th:href="@{/sig/veiculos/{placa}(placa=${veiculo.placa})}">Editar</a>
+									<a class="btnDeletar"
+										th:href="@{/sig/veiculo/{id}(id=${veiculo.id})}">Excluir</a>
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<h6 th:text="${message}" class="text-danger"></h6>
+			</div>
+		</div>
+		</div>
+	</body>
+</html>

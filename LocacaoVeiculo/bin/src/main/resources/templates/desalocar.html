@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel= "stylesheet" th:href="@{/css/desalocarStyle.css}" />
+		<link rel= "stylesheet" th:href="@{/css/allStyle.css}" />
+	</head>
+	<body>
+		<div class = "Menu">
+			<a th:href="@{/sig/alocados}" id="botaoVoltar"><button><img th:src="@{/images/setaVoltar.png}" /></button></a>
+			<h1>Desalocar</h1>
+			<div id="formulario">
+			<form action="#" th:action="@{/sig/alocados/{id}(id=${alocar.id})}" th:object="${alocar}" method="post">
+				<label for="desalCpfCliente">CPF do cliente: </label>
+				<input type="number" th:field="*{clienteCpf}" id="alCpfCliente" name="alCpfCliente"><br><br>
+				<div id="desalConsulVeiculo">
+					<label for="txtDesalNomeVeiculo">Fabricante do veiculo: </label>
+					<label for="saDesalNomeVeiculo" th:text="${alocar.veiculoNome}" id="desalNomeVeiculo" name="desalNomeVeiculo"></label><br>
+					
+					<label for="txtDesalPlacaVeiculo">Placa do veiculo: </label>
+					<label for="saDesalPlacaVeiculo" th:text="${alocar.veiculoPlaca}" id="desalPlacaVeiculo" name="desalPlacaVeiculo"></label><br>
+					
+					<label for="txtDesalCodigoVeiculo">Codigo do veiculo: </label>
+					<label for="saDesalCodigoVeiculo" th:text="${alocar.veiculoId}" id="desalCodigoVeiculo" name="desalCodigoVeiculo"></label>
+				</div>
+				<br>
+				
+				<!--<label for="txtDesalDtDevolucao">Data de devolução: </label>
+				<label for="saDesalDtDevolucao" id="desalDtDevolucao" name="desalDtDevolucao">xxxxxxxxxxxxxxxxx</label><br><br> -->
+				
+				<label for="txtDesalDtEntrega">Data de entrega: </label>
+				<label for="saDesalDtEntrega" th:text="${alocar.dtEntregaFormat}" id="desalDtEntrega" name="desalDtEntrega"></label><br><br>
+				
+				<!--<label for="txtDesalKmAtual">Km atual do veiculo: </label>
+				<input type="number" id="saDesalKmAtual" name="saDesalKmAtual"><br><br>
+				<label for="txtDesalValorAdicional">Valor adicional: </label>
+				<label for="saDesalValorAdicional" id="desalValorAdicional" name="desalValorAdicional">xxxxxxxxxxxx</label>
+				<input type="checkbox" id="valorCalchao" name="valorCalchao">
+				<label for="valorCalchao">Devolver calchão</label><br><br> -->
+				
+				<div id="botaoConfirma">
+					<input type="submit" onclick="alert('Imagine um boleto sendo gerado nesse momento');" value="Desalocar/Gerar boleto" id="confirmarCadastro" name="confirmarCadastro">
+				</div>
+				
+			</form>
+		</div>
+		</div>
+	</body>
+</html>

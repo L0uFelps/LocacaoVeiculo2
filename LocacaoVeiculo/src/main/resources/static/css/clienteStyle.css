@@ -1,0 +1,10 @@
+#MenuCliente{
+	list-style-type: none;
+	overflow: hidden;
+	margin-left: 20%;
+	padding: 0;
+}
+
+#voltar{
+	text-align: left;
+}

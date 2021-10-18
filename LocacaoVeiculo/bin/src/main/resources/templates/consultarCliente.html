@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"> 
+
+<head>
+	<link rel="stylesheet" th:href="@{/css/consulClienteStyle.css}" />
+	<link rel="stylesheet" th:href="@{/css/allStyle.css}" />
+</head>
+
+<body>
+	<div class="Menu">
+		<a th:href="@{/sig/menuCliente}" id="botaoVoltar"><button><img th:src="@{/images/setaVoltar.png}" /></button></a>
+		<h1>Consultar Cliente</h1>
+		<div class="bodyTable" th:switch="${clientes}">
+			<h5 th:case="null">Não existem clientes cadastrados ainda!</h5>
+			<div th:case="*">
+				<table class="table">
+					<thead>
+						<tr>
+							<th>ID</th>
+							<th>CPF</th>
+							<th>Nome</th>
+							<th>Dt. Nascimento</th>
+							<th>e-mail</th>
+							<th>Telefone</th>
+							<th>CEP</th>
+							<th>Endereço</th>
+							<th>Dt. Cadastro</th>
+							<th>Alocação</th>	
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="cliente : ${clientes}">
+							<td th:text="${cliente.id}"></td>
+							<td th:text="${cliente.cpf}"></td>
+							<td th:text="${cliente.nome}"></td>
+							<td th:text="${cliente.dtNascimentoFormat}"></td>
+							<td th:text="${cliente.email}"></td>
+							<td th:text="${cliente.telefone}"></td>
+							<td th:text="${cliente.cep}"></td>
+							<td th:text="${cliente.endereco.logradouro}"></td>
+							<td th:text="${cliente.dataCadastro}"></td>
+							<td th:text="${cliente.alocacao}"></td>
+							
+							
+							
+							
+							<td>
+								<div class="btn-group pull-right">
+									<a class="btnAlterar"
+										th:href="@{/sig/clientes/{cpf}(cpf=${cliente.cpf})}">Editar</a>
+									<a class="btnDeletar"
+										th:href="@{/sig/cliente/{id}(id=${cliente.id})}">Excluir</a>
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<h6 th:text="${message}" class="text-danger"></h6>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

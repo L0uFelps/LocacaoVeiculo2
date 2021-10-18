@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<link rel="stylesheet" th:href="@{/css/cadasClienteStyle.css}" />
+	<link rel="stylesheet" th:href="@{/css/allStyle.css}" />
+	<title>Cadastrar cliente</title>
+	<script type="text/javascript"> function consulta() {window.open("/sig/clientes");} </script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+	<div class="Menu">
+		<a th:href="@{/sig/menuCliente}" id="botaoVoltar"><button><img th:src="@{/images/setaVoltar.png}" /></button></a>
+		<h1>Cadastrar cliente</h1>
+		<div id="formulario">
+			<form action="#" th:action="@{/sig/clientes}" th:object="${cliente}" method="post">
+
+				<label for="nomeCliente">Nome: </label>
+				<input type="text" th:field="*{nome}" id="nomeCliente" name="nomeCliente" placeholder="Nome">
+				<span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}" class="textdanger" > </span>
+				
+				<label for="dtCliente">Data de nascimento: </label>
+				<input type="text" th:field="*{dtNascimentoFormat}" id="dtCliente" name="dtCliente" placeholder="dd/mm/yyyy">
+				<span th:if="${#fields.hasErrors('dtNascimentoFormat')}" th:errors="*{dtNascimentoFormat}" class="textdanger" > </span><br><br>
+				
+				<label for="cep" class="col-form-label">CEP</label>  
+				<input type="text" th:field="*{cep}" class="form-control" id="cep"placeholder="CEP">
+				<span th:if="${#fields.hasErrors('cep')}" th:errors="*{cep}" class="text-danger"></span> 
+				
+				<label for="numResCliente">N°: </label>
+				<input type="text" th:field="*{num}" id="numResCliente" name="numResCliente" placeholder="Num"><br><br>
+				
+				<label for="emailCliente">Email: </label>
+				<input type="text"  th:field="*{email}" id="emailCliente" name="emailCliente" placeholder="exemplo@hotmail.com">
+				<span th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="text-danger" ></span> 
+				
+				<label for="telCliente">Telefone: </label>
+				<input type="text" th:field="*{telefone}" id="telCliente" name="telCliente" placeholder="Telefone">
+				<span th:if="${#fields.hasErrors('telefone')}" th:errors="*{telefone}" class="textdanger" > </span> <br><br>
+				
+				<label for="cpfCliente">CPF: </label>
+				<input type="text"  th:field="*{cpf}"  id="cpfCliente" name="cpfCliente" placeholder="CPF">
+				<span th:if="${#fields.hasErrors('cpf')}" th:errors="*{cpf}" class="textdanger"></span><br><br>
+				
+				
+				<div id="botaoConfirma">
+					<input type="submit" value="Confirmar cadastro"id="confirmarCadastro" name="confirmarCadastro">
+					<input type="button" value="Consultar clientes"id="consultar" name="consultar" onclick="consulta();">
+				</div>
+			</form>
+			<h6 th:text="${message}" class="text-danger"></h6>
+		</div>
+	</div>
+</body>
+
+</html>
